@@ -24,7 +24,6 @@ module.exports = class MACD {
     }
 
     period(indicatorPeriod) {
-		if (indicatorPeriod.indicators._candle != undefined){
         return this.macd(
             indicatorPeriod.getPrice(),
             indicatorPeriod.getIndicator('sma200'),
@@ -33,11 +32,6 @@ module.exports = class MACD {
             indicatorPeriod.getLastSignal(), (indicatorPeriod.indicators._candle.time * 1000),
             indicatorPeriod.strategyContext.symbol.replace('BTC', '')
         );
-		}
-		else {
-			console.log(indicatorPeriod.strategyContext.symbol + ' BROKEN')
-			
-        return SignalResult.createEmptySignal('debug');
 		}
     }
 

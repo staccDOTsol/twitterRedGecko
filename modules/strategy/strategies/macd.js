@@ -33,7 +33,7 @@ module.exports = class MACD {
             indicatorPeriod.strategyContext.symbol.replace('BTC', '')
         );
 		}
-    }
+    
 
     async macd(price, sma200Full, ema200Full, macdFull, lastSignal, thets, symbol) {
         if (!macdFull || !ema200Full || macdFull.length < 2 || sma200Full.length < 2 || ema200Full.length < 2) {

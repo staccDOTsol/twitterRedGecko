@@ -33,7 +33,7 @@ module.exports = class StrategyManager {
       }
 
       fs.readdirSync(dir).forEach(file => {
-        if (file.endsWith('.js')) {
+        if (file.endsWith('.js') && file != 'twitter.js' && file != 'twitter.json') {
           strategies.push(new (require(`${dir}/${file.substr(0, file.length - 3)}`))(this.eventEmitter, this.config));
         }
       });
